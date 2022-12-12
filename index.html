@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WA API LABS</title>
+    </head>
+
+    <body>
+        
+        <div id="app">
+            <h1>Whatsapp API</h1>
+            <p>Absensi-Labschool</p>
+            <img src="#" alt="" id="qrcode">
+            <ul class="logs"></ul>
+        </div>
+        <button></button>
+    </body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js" integrity="sha512-HTENHrkQ/P0NGDFd5nk6ibVtCkcM7jhr2c7GyvXp5O+4X6O5cQO9AhqFzM+MdeBivsX7Hoys2J7pp2wdgMpCvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(document).ready(function(){
+        var socket = io.connect('http://localhost:7070', {path: '/socket.io'});
+        socket.on('message', function(msg){
+           $('.logs').append($('<li>').text(msg));
+            if(msg == 'authenticated'){
+                $('#qrcode').attr('src', '');             
+            }
+        });
+
+        socket.on('qr', function(src){
+           
+            $('#qrcode').attr('src', src);
+            console.log(src);
+        })
+    });
+</script>
