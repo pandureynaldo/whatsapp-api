@@ -1,6 +1,7 @@
 
 ### How to use?
-- Install Node.js V 12++
+- Install Node.js V 14++
+- Install nodemon globally
 - Clone or download this repo
 - Enter to the project directory
 - Run npm install
