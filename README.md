@@ -9,3 +9,7 @@
 - Open browser and go to address http://localhost:7075
 - Scan the QR Code
 - Enjoy!
+
+
+## Base Library
+- https://github.com/pedroslopez/whatsapp-web.js
