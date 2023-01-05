@@ -10,6 +10,15 @@
 - Scan the QR Code
 - Enjoy!
 
-
-## Base Library
+### Base Library
 - https://github.com/pedroslopez/whatsapp-web.js
+
+
+### Example
+- Url : http://localhost:7075/send-message
+- Type : POST
+- Param : {number: '62812345678@c.us', body: 'testing'}
+
+<pre>
+ Phone number format should add '@c.us'
+<pre>
