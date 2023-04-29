@@ -5,7 +5,7 @@
 - Clone or download this repo
 - Enter to the project directory
 - Run npm install
-- Run npm run start
+- Run npm start
 - Open browser and go to address http://localhost:7075
 - Scan the QR Code
 - Enjoy!
