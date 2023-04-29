@@ -5,20 +5,20 @@ const socketIo = require('socket.io');
 const http = require('http');
 const client = new Client({
     restartOnAuthFail: true,
-    puppeteer: {
-        headless: true,
-        args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--single-process', // <- this one doesn't works in Windows
-        '--disable-gpu'
-        ],
-    },
-    puppeteer: { headless: true }
+    // puppeteer: {
+    //     headless: true,
+    //     args: [
+    //     '--no-sandbox',
+    //     '--disable-setuid-sandbox',
+    //     '--disable-dev-shm-usage',
+    //     '--disable-accelerated-2d-canvas',
+    //     '--no-first-run',
+    //     '--no-zygote',
+    //     '--single-process', // <- this one doesn't works in Windows
+    //     '--disable-gpu'
+    //     ],
+    // },
+    // puppeteer: { headless: true }
 });
 
 
@@ -42,11 +42,11 @@ client.on('message', async msg => {
 
     if (msg.body === 'bia') {
         // Send a new message as a reply to the current one
-        msg.reply('biyol');
+        // msg.reply('biyol');
 
     } else if (msg.body === 'hafa') {
         // Send a new message to the same chat
-        client.sendMessage(msg.from, 'hafsut');
+        // client.sendMessage(msg.from, 'hafsut');
 
     } else if (msg.body.startsWith('!sendto ')) {
         // Direct send a new message to specific id
@@ -247,13 +247,13 @@ client.on('message_ack', (msg, ack) => {
 client.on('group_join', (notification) => {
     // User has joined or been added to the group.
     console.log('join', notification);
-    notification.reply('User joined.');
+    // notification.reply('User joined.');
 });
 
 client.on('group_leave', (notification) => {
     // User has left or been kicked from the group.
     console.log('leave', notification);
-    notification.reply('User left.');
+    // notification.reply('User left.');
 });
 
 client.on('group_update', (notification) => {
